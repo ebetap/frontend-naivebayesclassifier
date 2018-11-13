@@ -2,6 +2,8 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld :msg="title"/>
+    <h4>{{subtitle}}</h4>
+    <h5>Author : {{author}}</h5>
   </div>
 </template>
 
@@ -13,7 +15,9 @@ export default {
   name: 'home',
   computed:{
     ...mapState({
-      title: state => state.title
+      title: state => state.title,
+      subtitle: state => state.subtitle,
+      author: state => state.author
     })
   },
   components: {
