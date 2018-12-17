@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     title: 'Naive Bayes Classifier',
-    subtitle: 'Frontend layer for naivebayes classifier. Create with MongoDB,Express.js,Vue.js,Node.js stack.',
+    subtitle: 'Naive Bayes Classifier',
     author: 'Beta Priyoko'
   },
   mutations,
