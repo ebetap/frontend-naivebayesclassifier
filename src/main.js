@@ -3,10 +3,12 @@ import App from './App.vue'
 import router from './router'
 import store from './store/store.js'
 import Vuetify from 'vuetify'
+import {Upload} from 'element-ui'
 import 'vuetify/dist/vuetify.min.css'
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(Vuetify)
-
+Vue.use(Upload)
 Vue.config.productionTip = false
 
 new Vue({

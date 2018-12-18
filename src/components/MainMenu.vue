@@ -30,18 +30,15 @@ export default {
     return{
       menuItems: [
         {
-          name: 'Test Model',
-          description: 'Untuk mengetes model yang telah dibuat.',
+          name: 'Klasifikasi Komentar',
           actionUrl: '/test-model'
         },
         {
-          name: 'Train Model',
-          description: 'Untuk menguji model',
+          name: 'Latih Model',
           actionUrl: '/train-model'
         },
         {
-          name: 'Evaluation Model',
-          description: 'Untuk mengevaluasi model yang dibuat.',
+          name: 'Evaluasi Model',
           actionUrl: 'evaluate-model'
         }
       ]
@@ -63,7 +60,7 @@ export default {
   }
   @media only screen and (min-width: 1264px){
     .container {
-      max-width: 980px!important;
+      max-width: 830px!important;
     }
   }
   .custom-container {
