@@ -6,10 +6,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "npm install && npm install http-server --save && npm run build && http-server dist/"
+    "start": "killall node && npm install && npm install http-server --save && npm run build && http-server dist/"
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "axios-fileupload": "0.0.1",
     "element-ui": "^2.4.11",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
