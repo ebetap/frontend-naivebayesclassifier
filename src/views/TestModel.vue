@@ -5,17 +5,14 @@
       <v-flex xs12 md12 lg12>
         <form>
           <v-text-field
-            v-model="dataset"
-            :error-messages="nameErrors"
+            v-model="komentar"
             label="Komentar"
             required
-            @input="$v.name.$touch()"
-            @blur="$v.name.$touch()"
           ></v-text-field>
           <v-btn 
             block 
             color="blue-grey darken-2" 
-            @click="submit"
+            @click="handleClassify"
             class="white--text"
             text-xs-center
           >
@@ -24,13 +21,48 @@
         </form>
       </v-flex>
     </v-layout>
-    <div class="result display-3 mt-5 text-uppercase">Spam</div>
+    <div v-if="result" class="result display-3 mt-5 text-uppercase">
+      {{result.label}}
+    </div>
+    <div v-if="result" class="probability display-1">
+      {{`Probability: ${result.probability}`}}
+    </div>
   </v-container>
 </template>
 
 <script>
+import axios from 'axios'
+import {baseUrl, headers} from '../config/api.js'
 export default {
-
+  name: 'TestModel',
+  data(){
+    return{
+      komentar: '',
+      result: null,
+      hasError: {
+        status: false,
+        message: ''
+      }
+    }
+  },
+  methods:{
+    handleClassify(){
+      if(this.komentar != ''){
+        axios.post(`${baseUrl}classify`,{
+          komentar: this.komentar
+        },headers)
+        .then(res => {
+          this.result=res.data
+        })
+        .catch(err => {
+          this.hasError = {
+            status: true,
+            message: err
+          }
+        })
+      }
+    }
+  }
 }
 </script>
 
