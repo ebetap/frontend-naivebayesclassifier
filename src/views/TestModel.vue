@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-md>
-    <h1>Test Model</h1>
+    <h1>Prediksi Komentar</h1>
     <v-layout row wrap>
       <v-flex xs12 md12 lg12>
         <form>

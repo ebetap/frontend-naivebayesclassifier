@@ -30,16 +30,16 @@ export default {
     return{
       menuItems: [
         {
-          name: 'Klasifikasi Komentar',
-          actionUrl: '/test-model'
+          name: 'Prediksi',
+          actionUrl: '/prediksi'
         },
         {
           name: 'Latih Model',
-          actionUrl: '/train-model'
+          actionUrl: '/latih-model'
         },
         {
-          name: 'Evaluasi Model',
-          actionUrl: 'evaluate-model'
+          name: 'Validasi Model',
+          actionUrl: '/validasi-model'
         }
       ]
     }

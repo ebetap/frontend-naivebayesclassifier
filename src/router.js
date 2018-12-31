@@ -14,7 +14,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/test-model',
+      path: '/prediksi',
       name: 'testModel',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
@@ -22,7 +22,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/TestModel.vue')
     },
     {
-      path: '/train-model',
+      path: '/latih-model',
       name: 'trainModel',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
@@ -30,7 +30,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/TrainModel.vue')
     },
     {
-      path: '/evaluate-model',
+      path: '/validasi-model',
       name: 'evaluateModel',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
