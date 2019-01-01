@@ -4,11 +4,12 @@
     <v-layout row wrap>
       <v-flex xs12 md12 lg12>
         <form>
-          <v-text-field
-            v-model="komentar"
+           <v-textarea
+            solo
+            name="input-7-4"
             label="Komentar"
-            required
-          ></v-text-field>
+            v-model="komentar"           
+          ></v-textarea>
           <v-btn 
             block 
             color="blue-grey darken-2" 

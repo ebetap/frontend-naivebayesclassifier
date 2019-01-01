@@ -9,6 +9,7 @@
       <h1>Validasi Model</h1>
       <v-layout row wrap>
         <v-flex xs12 md12 lg12>
+          <column-chart v-if="dataValidasi.length > 0" height="500px" xtitle="Fold" ytitle="Accuracy(%)" :data="dataValidasi"></column-chart>
           <v-btn block dark color="blue-grey darken-2" class="white--text mt-1" @click="validateModel">
             Validasi Model
           </v-btn>
@@ -29,7 +30,7 @@
     data() {
       return {
         isLoading: false,
-        dataValidasi: {}
+        dataValidasi: []
       }
     },
     methods: {
@@ -37,7 +38,11 @@
         this.isLoading = true
         axios.get(`${baseUrl}validasi`, headers)
           .then(res => {
-            this.dataValidasi = res.data
+            let arrayData = []
+            arrayData = res.data.statistic.map(data => {
+              return [`Fold ${data.fold}`,data.accuracy]
+            })
+            arrayData.map(arrData => this.dataValidasi.push(arrData))
             this.isLoading = false
           })
           .catch(err => {
