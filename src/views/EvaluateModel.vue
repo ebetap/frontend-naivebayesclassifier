@@ -9,10 +9,13 @@
       <h1>Validasi Model</h1>
       <v-layout row wrap>
         <v-flex xs12 md12 lg12>
-          <column-chart v-if="dataValidasi.length > 0" height="500px" xtitle="Fold" ytitle="Accuracy(%)" :data="dataValidasi"></column-chart>
-          <v-btn block dark color="blue-grey darken-2" class="white--text mt-1" @click="validateModel">
+          <column-chart v-if="dataValidasi.length > 0" xtitle="Fold" ytitle="Accuracy(%)" :data="dataValidasi"></column-chart>
+          <v-btn v-if="dataValidasi.length === 0" block dark color="blue-grey darken-2" class="white--text mt-1" @click="validateModel">
             Validasi Model
           </v-btn>
+          <h1 v-if="akurasiModel" class="akurasi-model">
+            Akurasi Model = {{akurasiModel}}
+          </h1>
         </v-flex>
       </v-layout>
     </v-container>
@@ -30,7 +33,8 @@
     data() {
       return {
         isLoading: false,
-        dataValidasi: []
+        dataValidasi: [],
+        akurasiModel: null
       }
     },
     methods: {
@@ -43,6 +47,7 @@
               return [`Fold ${data.fold}`,data.accuracy]
             })
             arrayData.map(arrData => this.dataValidasi.push(arrData))
+            this.akurasiModel = res.data.modelAccuracy
             this.isLoading = false
           })
           .catch(err => {
@@ -72,5 +77,9 @@
     top: 50%;
     transform: translate(-50%, -50%);
     max-width: 500px!important;
+  }
+
+  .akurasi-model {
+    margin-top: 30px;
   }
 </style>
