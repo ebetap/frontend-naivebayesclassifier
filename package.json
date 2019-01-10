@@ -6,8 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "npm install http-server --save && http-server dist/"
+    "start": "http-server dist/"
   },
+  "postinstall": "npm install http-server && npm run build",
   "dependencies": {
     "axios": "^0.18.0",
     "axios-fileupload": "0.0.1",
