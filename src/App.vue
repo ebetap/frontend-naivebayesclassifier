@@ -25,4 +25,10 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+@media (max-width: 767px){
+  #app > h1 {
+    font-size: 27px!important;
+  }
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-md text-xs-center custom-container>
     <v-layout row wrap>
-      <v-flex v-for="(menu,keyItem) in menuItems" :key="keyItem" xs4>
+      <v-flex v-for="(menu,keyItem) in menuItems" :key="keyItem" xs12 md4 lg4 >
         <v-card color="blue-grey darken-2" class="white--text">
           <v-card-title primary-title>
             <div>

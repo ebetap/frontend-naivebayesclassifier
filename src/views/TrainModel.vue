@@ -19,7 +19,7 @@
             {{alertTrainingMessage}}
           </v-alert>
         </v-flex>
-        <v-flex xs6 md6 lg6>
+        <v-flex xs12 md6 lg6>
           <h2 class="mb-3">Dataset Spam</h2>
           <v-text-field label="Select File" @click='pickFile' v-model='fileSpamName' prepend-icon='attach_file' :disabled="btnSpamDisable ? true:false"></v-text-field>
           <form>
@@ -30,7 +30,7 @@
           </form>
         </v-flex>
   
-        <v-flex xs6 md6 lg6>
+        <v-flex xs12 md6 lg6>
           <h2 class="mb-3">Dataset Not Spam</h2>
           <v-text-field label="Select File" @click='pickFileNotSpam' v-model='fileNotSpamName' prepend-icon='attach_file' :disabled="btnNotSpamDisable ? true:false"></v-text-field>
           <form>
