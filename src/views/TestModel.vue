@@ -25,9 +25,9 @@
     <div v-if="result" class="result display-3 mt-5 text-uppercase">
       {{result.label}}
     </div>
-    <div v-if="result" class="probability display-1">
+    <!-- <div v-if="result" class="probability display-1">
       {{`Probability: ${result.probability}`}}
-    </div>
+    </div> -->
   </v-container>
 </template>
 
@@ -35,7 +35,7 @@
 import axios from 'axios'
 import {baseUrl, headers} from '../config/api.js'
 export default {
-  name: 'TestModel',
+  name: 'PredictionForm',
   data(){
     return{
       komentar: '',

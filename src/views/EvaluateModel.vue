@@ -29,7 +29,7 @@
     headers
   } from '../config/api.js'
   export default {
-    name: 'EvaluasiModel',
+    name: 'ValidationForm',
     data() {
       return {
         isLoading: false,

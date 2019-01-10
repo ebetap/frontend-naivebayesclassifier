@@ -66,7 +66,7 @@
   import axiosFu from 'axios-fileupload'
   import axios from 'axios'
   export default {
-    name: 'TrainModel',
+    name: 'TrainingForm',
     data() {
       return {
         alertTraining: false,
