@@ -1,4 +1,5 @@
-# frontend
+## frontend application for my bachelor degree thesis
+Built with Vue.js
 
 ## Project setup
 ```
